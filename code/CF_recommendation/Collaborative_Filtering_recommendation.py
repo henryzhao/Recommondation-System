@@ -100,5 +100,5 @@ if __name__ == '__main__':
     movies_feature = pd.read_csv('../data/Moivelens/ml-latest-small/movies_feature.csv', index_col=0)
     user_rating = pd.read_csv('../data/Moivelens/ml-latest-small/user-rating.csv', index_col=0)
 
-    print CF_recommend_estimate(user_rating, 1, [10, 17], 50)
+    print(CF_recommend_estimate(user_rating, 1, [10, 17], 50))
 
