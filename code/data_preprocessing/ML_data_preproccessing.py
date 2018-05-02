@@ -58,7 +58,7 @@ def train_test_split(user_rating, random_state=100):
 def data_preprocess():
     #创建user-item评分矩阵
     print "Loading data..."
-    rating_data = pd.read_csv('..k/data/Moivelens/ml-latest-small/ratings.csv')
+    rating_data = pd.read_csv('../data/Movielens/ml-latest-small/ratings.csv')
     user_id = rating_data['userId'].unique()
     movie_id = rating_data['movieId'].unique()
     rating_matrix = np.zeros([len(user_id),len(movie_id)])
@@ -80,12 +80,12 @@ def data_preprocess():
             completed_percentage = round(float(count) / user_num * 100)
             print "Completed %s" % completed_percentage + "%"
 
-    rating_matrix.to_csv('../data/Moivelens/ml-latest-small/user-rating.csv')
+    rating_matrix.to_csv('../data/Movielens/ml-latest-small/user-rating.csv')
 
 
     #创建电影的年份特征
     print "Loading data..."
-    movies_data = pd.read_csv('../data/Moivelens/ml-latest-small/movies.csv')
+    movies_data = pd.read_csv('../data/Movielens/ml-latest-small/movies.csv')
     movies_num = len(movies_data)
 
     print "Creating the feature of years/n"
@@ -140,4 +140,6 @@ def data_preprocess():
 
     movies_data.set_index('movieId', inplace=True)
     movies_data.drop(['title', 'genres'], axis=1, inplace=True)
-    movies_data.to_csv('../data/Moivelens/ml-latest-small/movies_feature.csv')
+    movies_data.to_csv('../data/Movielens/ml-latest-small/movies_feature.csv')
+if __name__ == '__main__':
+    data_preprocess()

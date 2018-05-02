@@ -13,7 +13,8 @@ from measure import measure_method
 
 if __name__ == '__main__':
 
-    # ML_data_preproccessing.data_preprocess()
+    # process data
+    #ML_data_preproccessing.data_preprocess()
 
     # 导入数据
     movies_feature = pd.read_csv('../data/Moivelens/ml-latest-small/movies_feature.csv', index_col=0)

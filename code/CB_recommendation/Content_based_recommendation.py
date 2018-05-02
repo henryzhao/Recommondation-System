@@ -133,8 +133,8 @@ def CB_recommend_top_K(user_feature, item_feature_matrix, K):
 
 
 if __name__ == '__main__':
-    movies_feature = pd.read_csv('./movies_feature.csv', index_col=0)
-    user_rating = pd.read_csv('./user-rating.csv', index_col=0)
+    movies_feature = pd.read_csv('../data/Movielens/ml-latest-small/movies_feature.csv', index_col=0)
+    user_rating = pd.read_csv('../data/Movielens/ml-latest-small/user-rating.csv', index_col=0)
     user_feature = user_rating.loc[100,:]
     print(CB_recommend_estimate(user_feature, movies_feature, 10))
     print(CB_recommend_top_K(user_feature, movies_feature, 10))
